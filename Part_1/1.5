@@ -1,0 +1,21 @@
+[root@localhost Part_1]# docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED        SIZE
+fav_distro                          bionic    3941d3b032a8   2 months ago   63.1MB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   2 years ago    83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   2 years ago    15.7MB
+devopsdockeruh/pull_exercise        latest    d9854bc0e13a   4 years ago    75.3MB
+[root@localhost Part_1]# docker run -d --name alpine devopsdockeruh/simple-web-service:alpine
+bb4a0e999a9bce2259c20e942dbf58e2a90b5bbf43d6dc4c1506a87ce32efa1f
+[root@localhost Part_1]# docker exec -it alpine sh
+/usr/src/app # tail -f ./text.log
+2023-05-15 12:36:16 +0000 UTC
+2023-05-15 12:36:18 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-05-15 12:36:20 +0000 UTC
+2023-05-15 12:36:22 +0000 UTC
+2023-05-15 12:36:24 +0000 UTC
+2023-05-15 12:36:26 +0000 UTC
+2023-05-15 12:36:28 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-05-15 12:36:30 +0000 UTC
+2023-05-15 12:36:32 +0000 UTC
