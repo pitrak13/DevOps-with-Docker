@@ -1,0 +1,2 @@
+touch text.log
+docker run -d --rm --mount type=bind,source=$(pwd)/text.log,target=/usr/src/app/text.log devopsdockeruh/simple-web-service
