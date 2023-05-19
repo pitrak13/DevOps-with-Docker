@@ -1,0 +1,8 @@
+Registered to heroku
+install and login to heroku CLI
+modified the Dockerfile of exercise 1.13
+built the image
+pushed to heroku
+deployed the app
+
+https://devops-exercise.herokuapp.com/ping

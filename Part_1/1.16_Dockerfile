@@ -1,0 +1,11 @@
+FROM golang:1.16
+
+EXPOSE 8080
+
+COPY /exapmle-backend/ /usr/src/app/
+
+WORKDIR /usr/src/app/
+
+RUN go build
+
+CMD ["./server"]
