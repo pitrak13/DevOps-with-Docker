@@ -1,0 +1,14 @@
+FROM golang:1.16
+
+EXPOSE 8080
+
+COPY /material-applications/example-backend /usr/src/app/
+
+WORKDIR /usr/src/app/
+
+RUN go build
+
+CMD ["./server"]
+
+____COMMAND USED____
+docker run -it -p 1234:8080 --rm backend

@@ -1,0 +1,2 @@
+docker run -it --rm -p 5000:5000 frontend:1
+docker run -it --rm -p 1234:8080 backend:1
