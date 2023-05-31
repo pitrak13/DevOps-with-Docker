@@ -1,0 +1,14 @@
+version : '3.8'
+
+services:
+  backend:
+    image: backend:v2
+    ports: 
+      - 1234:8080
+    command: ["./server"]
+  
+  frontend:
+    image: frontend:v2
+    ports:
+      - 5000:5000
+    command: ["serve", "-s", "-l", "5000", "build"]
