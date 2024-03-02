@@ -1,1 +1,4 @@
-Learning DevOps with Docker on https://devopswithdocker.com/ by University of Helsinki and Eficode
+Submitted exercises from DevOps with Docker course
+
+Course available by University of Helsinki and Eficode
+https://devopswithdocker.com/
