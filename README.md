@@ -1,4 +1,4 @@
-Submitted exercises from DevOps with Docker course
+Submitted exercises for DevOps with Docker course
 
-Course available by University of Helsinki and Eficode
+Course by University of Helsinki and Eficode
 https://devopswithdocker.com/
