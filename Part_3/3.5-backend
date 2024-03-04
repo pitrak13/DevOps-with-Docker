@@ -1,0 +1,17 @@
+FROM golang:1.16
+
+EXPOSE 8080
+
+ENV REQUEST_ORIGIN="http://192.168.190.130"
+
+COPY /material-applications/example-backend /usr/src/app/
+
+WORKDIR /usr/src/app/
+
+RUN go build
+
+RUN adduser --disabled-password --gecos "" --no-create-home appuser
+RUN chown -R appuser /usr/src/app
+USER appuser
+
+CMD ["./server"]
