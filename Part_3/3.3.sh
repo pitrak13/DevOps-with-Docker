@@ -9,7 +9,6 @@ REPO=${GITHUB#*\/}	#Git repository name
 
 git clone https://github.com/$1
 
-cd $REPO
-docker build -t $2 .
+docker build -t $2 $REPO/
 
 docker push $2
