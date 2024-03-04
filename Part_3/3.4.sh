@@ -1,0 +1,16 @@
+#!/bin/ash
+
+#Clones $1, builds the image, and pushes it to Docker Hub repository $2
+#This script must be run with Docker capable privileges and you should login to your registry before pushing!
+
+GITHUB="$1"		#Git account/repository
+DOCKERHUB="$2"		#Docker Hub account/repository
+REPO=${GITHUB#*\/}	#Git repository name
+
+docker login -u $DOCKER_USER -p $DOCKER_PWD
+
+git clone https://github.com/$1
+
+docker build -t $2 $REPO/
+
+docker push $2
