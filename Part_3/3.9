@@ -1,0 +1,24 @@
+#Reduced image size from 131MB to 18.1MB
+
+FROM golang:1.16-alpine as builder
+
+EXPOSE 8080
+
+ENV REQUEST_ORIGIN="http://192.168.190.130"
+
+COPY /material-applications/example-backend /usr/app
+
+WORKDIR /usr/app
+
+RUN CGO_ENABLED=0 go build -ldflags '-extldflags "-static"' && \
+    adduser --disabled-password --gecos "" --no-create-home appuser && \
+    chown -R appuser /usr/app
+
+FROM scratch
+
+COPY --from=builder /usr/app .
+COPY --from=builder /etc/passwd /etc/passwd
+
+USER appuser
+
+CMD ["./server"]
